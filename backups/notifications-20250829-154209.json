@@ -1,0 +1,587 @@
+[
+  {
+    "id": 1,
+    "message": "Mujamuju RW 2-1 (Kelompok Belajar (Rumah Pak Mulyono Sulaeman) RW 2, Kelurahan Mujamuju)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:27:09.161Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 2,
+    "message": "Prawirodirjan (Koramil 12/GM)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:27:09.222Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 3,
+    "message": "Sorosutan RW 7-1 (Balai Warga RW 07 Kampung Dagaran, Kelurahan Sorosutan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:27:09.289Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 4,
+    "message": "Terban RW 6-1 (Balai RW 06, Kelurahan Terban)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:27:09.319Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 5,
+    "message": "Kadipaten RW 8-1 (Masjid Moelyo Utomo RW 8, Kelurahan Kadipaten)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:28:09.052Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 6,
+    "message": "Mujamuju RW 5-2 (Pendopo Balai Pertemuan Warga Ledok Timoho RW 5, Kelurahan Mujamuju)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:28:09.101Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 7,
+    "message": "Panembahan-1 (Koramil 11/KT)Status: OFF",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:28:09.167Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 8,
+    "message": "Prawirodirjan (Koramil 12/GM)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:28:09.183Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 9,
+    "message": "Rejowinangun RW 9-1 (Balai RW 009, Kelurahan Rejowinangun)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:28:09.233Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 10,
+    "message": "Sorosutan RW 7-1 (Balai Warga RW 07 Kampung Dagaran, Kelurahan Sorosutan)Status: OFF(RTO)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:28:09.247Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 11,
+    "message": "Kadipaten RW 8-1 (Masjid Moelyo Utomo RW 8, Kelurahan Kadipaten)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:29:09.065Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 12,
+    "message": "Mujamuju RW 5-2 (Pendopo Balai Pertemuan Warga Ledok Timoho RW 5, Kelurahan Mujamuju)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:29:09.099Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 13,
+    "message": "Rejowinangun RW 9-1 (Balai RW 009, Kelurahan Rejowinangun)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:29:09.219Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 14,
+    "message": "Tegalrejo RW 5-1 (Masjid P. Diponegoro RW 005, Kelurahan Tegalrejo)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:29:09.259Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 15,
+    "message": "Baciro RW 16-1 (Rumah Pak Margono RW 016 Kelurahan Baciro)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:30:09.022Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 16,
+    "message": "Pringgokusuman RW 16 (Masjid Danoedjo)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:30:09.107Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 17,
+    "message": "Suryatmajan RW 9 (Balai RW 09 RT 26 Kelurahan Suryatmajan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:30:09.153Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 18,
+    "message": "Tegalrejo RW 5-1 (Masjid P. Diponegoro RW 005, Kelurahan Tegalrejo)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:30:09.178Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 19,
+    "message": "Baciro RW 16-1 (Rumah Pak Margono RW 016 Kelurahan Baciro)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:32:09.067Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 20,
+    "message": "Mujamuju RW 1-1 (Pos Ronda RT 1 RW 1, Kelurahan Mujamuju)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:32:09.142Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 21,
+    "message": "Pringgokusuman RW 16 (Masjid Danoedjo)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:32:09.185Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 22,
+    "message": "Suryatmajan RW 9 (Balai RW 09 RT 26 Kelurahan Suryatmajan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:32:09.230Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 23,
+    "message": "Bausasran RW 8-1 (Balai Warga RW 008 Kelurahan Baciro  Kelurahan Bausasran)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:33:09.104Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 24,
+    "message": "Mujamuju RW 1-1 (Pos Ronda RT 1 RW 1, Kelurahan Mujamuju)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:33:09.145Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 25,
+    "message": "Prenggan RW 6-2 (Balai RW 6, Kelurahan Prenggan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:33:09.202Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 26,
+    "message": "Sorosutan RW 7-1 (Balai Warga RW 07 Kampung Dagaran, Kelurahan Sorosutan)Status: OFF",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:33:09.245Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 27,
+    "message": "Tegalrejo RW 7-2 (Balai Rakyat Sena Bakti Pertiwi RW 007, Kelurahan Tegalrejo)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:33:09.274Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 28,
+    "message": "Bausasran RW 8-1 (Balai Warga RW 008 Kelurahan Baciro  Kelurahan Bausasran)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:34:09.034Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 29,
+    "message": "Mujamuju RW 1-1 (Pos Ronda RT 1 RW 1, Kelurahan Mujamuju)Status: OFF(RTO)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:34:09.116Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 30,
+    "message": "Prenggan RW 3 (Masjid Al Mustagfirin)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:34:09.174Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 31,
+    "message": "Tegalrejo RW 7-2 (Balai Rakyat Sena Bakti Pertiwi RW 007, Kelurahan Tegalrejo)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:34:09.257Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 32,
+    "message": "Baciro RW 18 (Pos Ronda RT 72)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:35:09.061Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 33,
+    "message": "Karangwaru RW 3 (Gedung Serbaguna Karangwaru Lor)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:35:09.128Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 34,
+    "message": "Prenggan RW 3 (Masjid Al Mustagfirin)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:35:09.200Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 35,
+    "message": "Sosromenduran RW 6-2 (Rumah Pak Ervin RW 6,  Kelurahan Sosromeduran)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:35:09.265Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 36,
+    "message": "Baciro RW 18 (Pos Ronda RT 72)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:36:09.066Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 37,
+    "message": "Gunungketur RW 9-2 (Jamu Ginggang RW 009, Kelurahan Gunungketur)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:36:09.117Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 38,
+    "message": "Karangwaru RW 3 (Gedung Serbaguna Karangwaru Lor)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:36:09.137Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 39,
+    "message": "Tegalpanggung RW 9-1 (Pos ronda RT 41 RW 09, Kelurahan Tegalpanggung)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:36:09.268Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 40,
+    "message": "Gunungketur RW 9-2 (Jamu Ginggang RW 009, Kelurahan Gunungketur)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:37:09.089Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 41,
+    "message": "Prawirodirjan RW 8-1 (Pos Ronda RW 08 Kelurahan Prawirodirjan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:37:09.139Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 42,
+    "message": "Tegalpanggung RW 9-1 (Pos ronda RT 41 RW 09, Kelurahan Tegalpanggung)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:37:09.203Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 43,
+    "message": "Baciro RW 20-3 (Pos kamling RW 20 Kelurahan Baciro)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:38:09.045Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 44,
+    "message": "Mujamuju RW 1-1 (Pos Ronda RT 1 RW 1, Kelurahan Mujamuju)Status: OFF",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:38:09.102Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 45,
+    "message": "Prawirodirjan RW 8-1 (Pos Ronda RW 08 Kelurahan Prawirodirjan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:38:09.141Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 46,
+    "message": "Sorosutan RW 7-1 (Balai Warga RW 07 Kampung Dagaran, Kelurahan Sorosutan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:38:09.195Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 47,
+    "message": "Baciro RW 3-1 (Pos ronda RW 03 Kelurahan Baciro)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.069Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 48,
+    "message": "Mujamuju RW 10 (Balai RW 10 Mujamuju)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.139Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 49,
+    "message": "Panembahan RW 15 (Pos Ronda RW 15 RT 57 Kelurahan Panembahan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.184Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 50,
+    "message": "Prenggan RW 3 (Masjid Al Mustagfirin)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.219Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 51,
+    "message": "Sorosutan RW 7-1 (Balai Warga RW 07 Kampung Dagaran, Kelurahan Sorosutan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.269Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 52,
+    "message": "Tegalpanggung RW 6-1 (Rumah warga RT 32 RW 06, Kelurahan Tegalpanggung)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:39:09.292Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 53,
+    "message": "Gungketur RW 6-1 (Omah Kreatif Loedji 16 RW 006 Kelurahan Gunungketur)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:40:09.101Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 54,
+    "message": "Ngampilan RT 12 RW 2 (Ruang Publik RT 12 RW 2 Kelurahan Ngampilan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:40:09.182Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 55,
+    "message": "Prenggan RW 3 (Masjid Al Mustagfirin)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:40:09.240Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 56,
+    "message": "Sosromenduran RW 6-2 (Rumah Pak Ervin RW 6,  Kelurahan Sosromeduran)Status: OFF",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:40:09.321Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 57,
+    "message": "Gungketur RW 6-1 (Omah Kreatif Loedji 16 RW 006 Kelurahan Gunungketur)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:41:09.075Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 58,
+    "message": "Mujamuju RW 10 (Mushola Al Fathon RW 10 Kelurahan Mujamuju)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:41:09.110Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 59,
+    "message": "Panembahan RW 15 (Pos Ronda RW 15 RT 57 Kelurahan Panembahan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:41:09.142Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 60,
+    "message": "Suryodiningratan RT 2 RW 1 (Masjid Pangeran Puger RW 1 Suryodiningratan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:41:09.308Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 61,
+    "message": "Demangan RW 4-1 (Rumah Warga RT 14 RW 004, Kelurahan Demangan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:42:09.091Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 62,
+    "message": "Ngampilan RT 12 RW 2 (Ruang Publik RT 12 RW 2 Kelurahan Ngampilan)Status: OFF(RTO)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:42:09.144Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 63,
+    "message": "Prenggan RW 1-2 (Balai Serbaguna Masjid Al Kiraam RW 001, Kelurahan Prenggan)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:42:09.190Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 64,
+    "message": "Purwokinanti RW 7-1 (Pos Ronda RT 32 RW 007, Kelurahan Purwokinanti)Status: OFF(Waiting Connection)",
+    "type": "warning",
+    "timestamp": "2025-08-29T08:42:09.234Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  },
+  {
+    "id": 65,
+    "message": "Suryodiningratan RT 2 RW 1 (Masjid Pangeran Puger RW 1 Suryodiningratan)Status: ON",
+    "type": "success",
+    "timestamp": "2025-08-29T08:42:09.304Z",
+    "ont_id": null,
+    "ont_name": null,
+    "read": false
+  }
+]
