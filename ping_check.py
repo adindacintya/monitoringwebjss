@@ -144,7 +144,7 @@ def main():
                     except Exception as e:
                         print(f"ERROR: Gagal mengirim jumlah user. Alasan: {e}")
                     
-                    # 2. Kirim DETAIL user untuk halaman analitik
+                    # 2. Kirim DETAILL user untuk halaman analitik
                     try:
                         # Data detail sudah bersih dari fungsi sebelumnya, langsung kirim
                         requests.post(f"{FLASK_SERVER_URL}/api/log-active-users", json=users_detail, timeout=10)
