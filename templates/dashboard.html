@@ -294,9 +294,21 @@
         </div>
         
         <div class="menu-grid">
-            <a href="/" class="menu-card map-card"><i class="fas fa-map-marked-alt menu-icon"></i><div class="menu-title">Peta Monitoring</div><div class="menu-description">Visualisasi lokasi ONT dalam peta interaktif.</div></a>
-            <a href="/admin" class="menu-card list-card"><i class="fas fa-list-alt menu-icon"></i><div class="menu-title">Daftar ONT</div><div class="menu-description">Kelola data ONT secara terperinci.</div></a>
-            <a href="/notifications" class="menu-card notif-card"><i class="fas fa-bell menu-icon"></i><div class="menu-title">Histori Notifikasi</div><div class="menu-description">Lihat riwayat notifikasi dan aktivitas sistem.</div></a>
+        <a href="/" class="menu-card map-card">
+            <i class="fas fa-map-marked-alt menu-icon"></i>
+            <div class="menu-title">Peta Monitoring</div>
+            <div class="menu-description">Visualisasi lokasi ONT dalam peta interaktif.</div>
+        </a>
+        <a href="/admin" class="menu-card list-card">
+            <i class="fas fa-list-alt menu-icon"></i>
+            <div class="menu-title">Daftar ONT</div>
+            <div class="menu-description">Kelola data ONT secara terperinci.</div>
+        </a>
+        <a href="/notifications" class="menu-card notif-card">
+            <i class="fas fa-bell menu-icon"></i>
+            <div class="menu-title">Histori Notifikasi</div>
+            <div class="menu-description">Lihat riwayat notifikasi dan aktivitas sistem.</div>
+        </a>
         </div>
         
         <div class="stats-section">
@@ -377,13 +389,13 @@
         let userHistoryLineChart;
 
         function loadStats() {
+            // Fungsi ini tetap sama
             fetch('/api/onts').then(res => res.json()).then(data => {
                 document.getElementById('total-onts').textContent = data.length;
                 const onlineCount = data.filter(ont => ont.status === 'ON').length;
                 document.getElementById('online-onts').textContent = onlineCount;
                 document.getElementById('offline-onts').textContent = data.length - onlineCount;
             });
-            
             fetch('/api/history').then(res => res.json()).then(data => {
                 if (data.length > 0) {
                     document.getElementById('active-users').textContent = data[data.length - 1].users;
@@ -393,107 +405,154 @@
             });
         }
 
-        // FUNGSI BARU UNTUK MENGATUR SKALA ZOOM
         function updateChartScale(chart) {
+            // Fungsi ini tetap sama
             const data = chart.data.datasets[0].data;
-            if (data.length < 2) { // Butuh minimal 2 titik data untuk menentukan rentang
-                // Jika data masih sedikit, gunakan skala default
+            if (data.length < 2) {
                 chart.options.scales.y.min = 0;
-                chart.options.scales.y.max = undefined; // Biarkan Chart.js menentukan max
+                chart.options.scales.y.max = undefined;
                 return;
             };
-
             const minValue = Math.min(...data);
             const maxValue = Math.max(...data);
-            
             const range = maxValue - minValue;
-            let padding = range * 0.1; // Bantalan 10% dari rentang data
-
-            // Jika data sangat flat (misal semua nilainya sama), beri bantalan default
-            if (padding === 0) {
-                padding = 5;
-            }
-
-            // Atur batas min dan max baru untuk sumbu Y
+            let padding = range * 0.1;
+            if (padding === 0) { padding = 5; }
             chart.options.scales.y.min = Math.floor(minValue - padding);
             chart.options.scales.y.max = Math.ceil(maxValue + padding);
         }
 
+        function formatTimestamp(isoString) {
+            // Fungsi ini tetap sama
+            const date = new Date(isoString);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${day}/${month} ${hours}:${minutes}`;
+        }
+
         function addNewDataPoint() {
+            // Fungsi ini tetap sama
             fetch('/api/history').then(res => res.json()).then(data => {
                 if (data.length > 0) {
                     const latestRecord = data[data.length - 1];
                     const chart = userHistoryLineChart;
-                    if (chart.data.labels.length === 0 || chart.data.labels[chart.data.labels.length - 1] !== latestRecord.time) {
-                        addDataToChart(latestRecord.time, latestRecord.users);
+                    const newLabel = formatTimestamp(latestRecord.timestamp);
+                    if (chart.data.labels.length === 0 || chart.data.labels[chart.data.labels.length - 1] !== newLabel) {
+                        addDataToChart(newLabel, latestRecord.users, latestRecord.timestamp);
                     }
                 }
             });
         }
         
-        function addDataToChart(label, userData) {
+        function addDataToChart(label, userData, fullTimestamp) {
+            // Fungsi ini tetap sama
             const chart = userHistoryLineChart;
             if (label !== null) {
                 chart.data.labels.push(label);
                 chart.data.datasets[0].data.push(userData);
+                chart.config.options.fullTimestamps.push(fullTimestamp);
             }
-            
-            // PANGGIL FUNGSI ZOOM SETELAH MENAMBAH DATA
             updateChartScale(chart);
-
             const dataCount = chart.data.labels.length;
             const minVisibleData = 12;
             if (dataCount > minVisibleData) {
                 const canvasContainer = document.querySelector('.chart-canvas-container');
                 canvasContainer.style.width = `${600 + (dataCount - minVisibleData) * 50}px`;
             }
-            chart.update(); // Perbarui grafik dengan data dan skala baru
-            
+            chart.update();
             const chartWrapper = document.querySelector('.chart-wrapper');
             chartWrapper.scrollLeft = chartWrapper.scrollWidth;
         }
 
-        function initializeChart(initialData) {
-            const labels = initialData.map(d => d.time);
-            const userData = initialData.map(d => d.users);
+            function initializeChart(initialData) {
+                const labels = initialData.map(d => formatTimestamp(d.timestamp));
+                const userData = initialData.map(d => d.users);
+                const fullTimestamps = initialData.map(d => d.timestamp);
 
-            const ctx = document.getElementById('userHistoryChart').getContext('2d');
-            userHistoryLineChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Jumlah User Aktif',
-                        data: userData,
-                        backgroundColor: 'rgba(255, 107, 53, 0.2)',
-                        borderColor: 'rgba(255, 107, 53, 1)',
-                        borderWidth: 2,
-                        fill: true,
-                        tension: 0.1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: { 
-                        y: { 
-                            // Min dan max akan diatur oleh fungsi updateChartScale
-                            title: { display: true, text: 'Jumlah User' } 
-                        } 
-                    },
-                    plugins: {
-                        title: { display: false },
-                        legend: { display: false }
+                // --- PLUGIN DENGAN LOGIKA BARU YANG LEBIH SEDERHANA DAN ANDAL ---
+                const verticalDayBands = {
+                    id: 'verticalDayBands',
+                    beforeDraw(chart) {
+                        const { ctx, chartArea: { top, bottom, left, right }, scales: { x } } = chart;
+                        const timestamps = chart.config.options.fullTimestamps;
+                        if (!timestamps || timestamps.length === 0) return;
+
+                        const dayColors = [
+                            'rgba(236, 240, 241, 0.2)', // Abu-abu terang
+                            'rgba(255, 255, 255, 0.2)'  // Putih transparan
+                        ];
+                        
+                        let lastDate = null;
+                        let colorIndex = 0;
+
+                        // Iterasi melalui setiap titik data (tick) di sumbu X
+                        x.ticks.forEach((tick, index) => {
+                            // Jangan lakukan apa-apa untuk titik pertama
+                            if (index === 0) {
+                                lastDate = new Date(timestamps[index]).toDateString();
+                                return;
+                            }
+
+                            const currentDate = new Date(timestamps[index]).toDateString();
+                            
+                            // Jika tanggal saat ini berbeda dari tanggal sebelumnya, ganti warna
+                            if (currentDate !== lastDate) {
+                                colorIndex = (colorIndex + 1) % dayColors.length;
+                            }
+                            
+                            // Ambil posisi pixel dari titik saat ini dan titik sebelumnya
+                            const xStart = x.getPixelForTick(index - 1);
+                            const xEnd = x.getPixelForTick(index);
+                            const width = xEnd - xStart;
+
+                            // Gambar kotak berwarna di antara dua titik tersebut
+                            ctx.save();
+                            ctx.fillStyle = dayColors[colorIndex];
+                            ctx.fillRect(xStart, top, width, bottom - top);
+                            ctx.restore();
+
+                            lastDate = currentDate;
+                        });
                     }
-                }
-            });
+                };
 
-            // PANGGIL FUNGSI ZOOM SAAT INISIALISASI
-            updateChartScale(userHistoryLineChart);
-            userHistoryLineChart.update(); // Pastikan skala diterapkan saat load
+                if (userHistoryLineChart) userHistoryLineChart.destroy();
+                
+                const ctx = document.getElementById('userHistoryChart').getContext('2d');
+                userHistoryLineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah User Aktif',
+                            data: userData,
+                            backgroundColor: 'rgba(255, 107, 53, 0.3)',
+                            borderColor: 'rgba(255, 107, 53, 1)',
+                            borderWidth: 2, fill: true, tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        fullTimestamps: fullTimestamps, // Pastikan data timestamp lengkap tersimpan di sini
+                        scales: { 
+                            y: { title: { display: true, text: 'Jumlah User' } } 
+                        },
+                        plugins: { 
+                            title: { display: false }, 
+                            legend: { display: false } 
+                        }
+                    },
+                    plugins: [verticalDayBands] // Aktifkan plugin
+                });
 
-            addDataToChart(null, null);
-        }
+                // Jalankan fungsi-fungsi lain seperti biasa
+                updateChartScale(userHistoryLineChart);
+                userHistoryLineChart.update();
+                addDataToChart(null, null, null);
+            }
 
         document.addEventListener('DOMContentLoaded', function() {
             loadStats();
@@ -502,7 +561,6 @@
                 .then(historyData => {
                     initializeChart(historyData);
                 });
-
             setInterval(loadStats, 30000);
             setInterval(addNewDataPoint, 20000);
         });
@@ -510,27 +568,20 @@
         function showActiveUsers() {
             const myModal = new bootstrap.Modal(document.getElementById('activeUsersModal'));
             const tableBody = document.getElementById('activeUsersTableBody');
-            
-            // Tampilkan modal dan pesan loading
             myModal.show();
             tableBody.innerHTML = '<tr><td colspan="3" class="text-center"><i class="fas fa-spinner fa-spin"></i> Memuat data...</td></tr>';
-
-            // Ambil data dari API baru
             fetch('/api/hotspot/active-users')
                 .then(response => response.json())
                 .then(data => {
-                    // Kosongkan tabel
                     tableBody.innerHTML = '';
                     if (data.error) {
-                        tableBody.innerHTML = `<tr><td colspan="3" class="text-center text-danger">Error: ${data.error}</td></tr>`;
-                        return;
+                         tableBody.innerHTML = `<tr><td colspan="3" class="text-center text-danger">Error: ${data.error}</td></tr>`;
+                         return;
                     }
                     if (data.length === 0) {
                         tableBody.innerHTML = '<tr><td colspan="3" class="text-center">Tidak ada user aktif.</td></tr>';
                         return;
                     }
-
-                    // Isi tabel dengan data baru
                     data.forEach((user, index) => {
                         const row = `<tr>
                                         <td>${index + 1}</td>
@@ -541,11 +592,10 @@
                     });
                 })
                 .catch(error => {
-                    tableBody.innerHTML = `<tr><td colspan="3" class="text-center text-danger">Gagal mengambil data. Coba lagi.</td></tr>`;
-                    console.error('Error fetching active users:', error);
+                     tableBody.innerHTML = `<tr><td colspan="3" class="text-center text-danger">Gagal mengambil data. Coba lagi.</td></tr>`;
+                     console.error('Error fetching active users:', error);
                 });
         }
-
     </script>
     <div class="modal fade" id="activeUsersModal" tabindex="-1" aria-labelledby="activeUsersModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
