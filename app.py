@@ -299,7 +299,6 @@ def get_history():
 
 @app.route('/api/record-history', methods=['POST'])
 def record_history():
-    """Menerima data jumlah user dari skrip monitoring dan menyimpannya."""
     data = request.get_json()
     user_count = data.get('users')
 
@@ -307,9 +306,11 @@ def record_history():
         return jsonify({"success": False, "message": "User count not provided"}), 400
 
     new_record = {
-        "time": datetime.now().strftime('%H:%M'),
+        # PERUBAHAN: Simpan timestamp lengkap, bukan hanya waktu
+        "timestamp": datetime.now().isoformat(), 
         "users": user_count
     }
+    
     try:
         with open(HISTORY_FILE, 'r') as f:
             history = json.load(f)
@@ -326,7 +327,6 @@ def record_history():
         json.dump(history, f, indent=2)
 
     return jsonify({"success": True, "recorded": new_record})
-
 
 # --- FUNGSI-FUNGSI OUTAGES DI BAWAH INI JUGA TETAP SAMA ---
 @app.route('/api/outages', methods=['GET'])
@@ -438,39 +438,42 @@ def get_analytics_data():
         with open(USER_LOG_FILE, 'r') as f:
             log_data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        return jsonify({"error": "No analytics data available yet."}), 404
-
+        return jsonify({"error": "Belum ada data analitik."}), 404
     if not log_data:
-        return jsonify({"error": "No analytics data available yet."}), 404
+        return jsonify({"error": "Belum ada data analitik."}), 404
 
-    # Kalkulasi statistik (kode ini sudah Anda miliki)
-    user_counts = [len(entry['users']) for entry in log_data]
-    peak_users = max(user_counts)
-    trough_users = min(user_counts)
-    avg_users = sum(user_counts) / len(user_counts)
-    all_macs = set()
+    # --- PERUBAHAN UTAMA: MENGELOMPOKKAN DATA PER HARI ---
+    daily_data = {}
     for entry in log_data:
-        for user in entry['users']:
-            if 'mac' in user:
-                all_macs.add(user['mac'])
-    unique_user_count = len(all_macs)
-    hours = [datetime.fromisoformat(entry['timestamp']).hour for entry in log_data]
-    if hours:
-        most_common_hour = Counter(hours).most_common(1)[0][0]
-        peak_hour = f"{most_common_hour:02d}:00 - {most_common_hour+1:02d}:00"
-    else:
-        peak_hour = "N/A"
+        day = datetime.fromisoformat(entry['timestamp']).strftime('%Y-%m-%d')
+        if day not in daily_data:
+            daily_data[day] = []
+        daily_data[day].append(len(entry['users']))
+    
+    daily_summary = []
+    for day, counts in daily_data.items():
+        if counts:
+            daily_summary.append({
+                "date": day,
+                "peak": max(counts),
+                "trough": min(counts),
+                "average": round(sum(counts) / len(counts))
+            })
+
+    daily_summary.sort(key=lambda x: x['date'])
+    user_counts = [len(entry['users']) for entry in log_data]
+    all_macs = set(user['mac'] for entry in log_data for user in entry['users'] if 'mac' in user)
+    
     analytics_payload = {
         "summary": {
-            "peak_users": peak_users,
-            "trough_users": trough_users,
-            "average_users": round(avg_users, 2),
-            "unique_devices": unique_user_count,
-            "peak_hour": peak_hour # <-- TAMBAHKAN KEY BARU INI
+            "peak_users": max(user_counts) if user_counts else 0,
+            "trough_users": min(user_counts) if user_counts else 0,
+            "average_users": round(sum(user_counts) / len(user_counts), 2) if user_counts else 0,
+            "unique_devices": len(all_macs)
         },
+        "daily_summary": daily_summary,
         "raw_logs": log_data[-100:]
     }
-    
     return jsonify(analytics_payload)
 
 if __name__ == '__main__':
