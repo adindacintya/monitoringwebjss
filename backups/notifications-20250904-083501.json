@@ -529,32 +529,5 @@
     "ont_id": null,
     "ont_name": null,
     "read": false
-  },
-  {
-    "id": 60,
-    "message": "MujaMuju RW 12-1 (Sekber Pemuda Kota Yogyakarta RW 012, Kelurahan Mujamuju)Status: ON",
-    "type": "success",
-    "timestamp": "2025-09-04T01:36:06.776Z",
-    "ont_id": null,
-    "ont_name": null,
-    "read": false
-  },
-  {
-    "id": 61,
-    "message": "Rejowinangun RW 1-1 (Balai Panca Gedongkuning RW 01, Kelurahan Rejowinangun)Status: ON",
-    "type": "success",
-    "timestamp": "2025-09-04T01:36:06.819Z",
-    "ont_id": null,
-    "ont_name": null,
-    "read": false
-  },
-  {
-    "id": 62,
-    "message": "Tegalrejo RW 5-1 (Masjid P. Diponegoro RW 005, Kelurahan Tegalrejo)Status: OFF(Waiting Connection)",
-    "type": "warning",
-    "timestamp": "2025-09-04T01:36:06.855Z",
-    "ont_id": null,
-    "ont_name": null,
-    "read": false
   }
 ]
