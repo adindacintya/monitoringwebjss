@@ -420,7 +420,7 @@ def log_active_users():
     
     log_data.append(new_log_entry)
 
-    # Batasi agar file log tidak terlalu besar (misal, simpan 2000 data terakhir)
+    # Batasi agar file log tidak terlalu besar (misal, simpan 2000 data terakhir)WWWWWWW
     MAX_LOG_ENTRIES = 2000
     if len(log_data) > MAX_LOG_ENTRIES:
         log_data = log_data[-MAX_LOG_ENTRIES:]
